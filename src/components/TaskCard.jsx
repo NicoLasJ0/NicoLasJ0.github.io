@@ -1,14 +1,17 @@
+import { useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
+
 function TaskCard(props) {
-  const task = props.task;
-  const index = props.index;
+  const task= props.task;
+  const state= useContext(TaskContext);
   return (
-    <div key={index}>
+    <div>
       <h1>{task.title}</h1>
       <p>{task.description}</p>
       <button
         onClick={(e) => {
           e.preventDefault();
-          props.deleteTask(task.id);
+          state.deleteTask(task.id);
         }}
       >
         Delete task

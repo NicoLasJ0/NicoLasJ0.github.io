@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
 
-function TaskForm(props) {
+function TaskForm() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [id, setId] = useState(0);
+  const state= useContext(TaskContext);
 
   return (
     <div>
@@ -11,7 +14,7 @@ function TaskForm(props) {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          props.addTask({ title, description, id });
+          state.addTask({ title, description, id });
         }}
       >
         <input
@@ -31,6 +34,7 @@ function TaskForm(props) {
           }}
           placeholder="Escribe la descripción de la tarea"
         ></input>
+        <br />
         <input
           type="number"
           onChange={(e) => {
@@ -39,6 +43,7 @@ function TaskForm(props) {
           }}
           placeholder="Escribe el id de la tarea"
         ></input>
+        <br />
         <button>Send</button>
       </form>
     </div>
