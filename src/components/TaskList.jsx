@@ -5,7 +5,7 @@ function TaskList() {
   const state = useContext(TaskContext);
   const tasks = state.tasks;
   if (tasks.length === 0) {
-    return <h1>No hay na</h1>;
+    return <h1 className="text-white font-bold">No hay na</h1>;
   }
   return (
     <div className="grid grid-cols-4 gap-2">

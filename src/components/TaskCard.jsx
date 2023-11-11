@@ -12,7 +12,7 @@ function TaskCard(props) {
         className="bg-red-500 px-2 py-1 rounded-md mt-2 hover:bg-red-400"
         onClick={(e) => {
           e.preventDefault();
-          if (confirm("¿En verdad Desea eliminar la tarea?")) {
+          if (confirm("¿En verdad desea eliminar la tarea?")) {
             state.deleteTask(task.id);
           }
         }}

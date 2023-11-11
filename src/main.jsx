@@ -6,7 +6,9 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <TaskContextProvider>
-      <App />
+      <div className="bg-zinc-900">
+        <App />
+      </div>
     </TaskContextProvider>
   </React.StrictMode>
 );
